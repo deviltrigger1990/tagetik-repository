@@ -15,17 +15,16 @@ public class ProductDecoratorFactoryTest {
 
         ProductDecoratorFactory productDecoratorFactory = new ProductDecoratorFactoryImpl();
 
-        Product product = Product.builder()
-                .productId(1)
-                .description("Product 1 Tagetik")
-                .price(2.0)
-                .quantity(0)
-                .category(Category.CAT1)
-                .build();
+        Product product = new Product();
+        product.setProductId(2);
+        product.setDescription("Product 1 Tagetik");
+        product.setPrice(2.0);
+        product.setQuantity(0);
+        product.setCategory(Category.CAT1);
 
 
         ProductDecorator pd = productDecoratorFactory.decorate(product);
-        assertEquals(pd.compute(),0);
+        assertEquals(pd.compute(), 0);
 
     }
 
@@ -34,17 +33,15 @@ public class ProductDecoratorFactoryTest {
 
         ProductDecoratorFactory productDecoratorFactory = new ProductDecoratorFactoryImpl();
 
-        Product product = Product.builder()
-                .productId(1)
-                .description("Product 1 Tagetik")
-                .price(2.0)
-                .quantity(0)
-                .category(Category.CAT1)
-                .build();
-
+        Product product = new Product();
+        product.setProductId(2);
+        product.setDescription("Product 1 Tagetik");
+        product.setPrice(0);
+        product.setQuantity(2);
+        product.setCategory(Category.CAT1);
 
         ProductDecorator pd = productDecoratorFactory.decorate(product);
-        assertEquals(pd.compute(),0.0);
+        assertEquals(pd.compute(), 0.0);
 
     }
 
@@ -53,17 +50,16 @@ public class ProductDecoratorFactoryTest {
 
         ProductDecoratorFactory productDecoratorFactory = new ProductDecoratorFactoryImpl();
 
-        Product product = Product.builder()
-                .productId(1)
-                .description("Product 1 Tagetik")
-                .price(0)
-                .quantity(0)
-                .category(Category.CAT1)
-                .build();
+        Product product = new Product();
+        product.setProductId(2);
+        product.setDescription("Product 1 Tagetik");
+        product.setPrice(0);
+        product.setQuantity(0);
+        product.setCategory(Category.CAT1);
 
 
         ProductDecorator pd = productDecoratorFactory.decorate(product);
-        assertEquals(pd.compute(),0.0);
+        assertEquals(pd.compute(), 0.0);
 
     }
 
@@ -72,17 +68,16 @@ public class ProductDecoratorFactoryTest {
 
         ProductDecoratorFactory productDecoratorFactory = new ProductDecoratorFactoryImpl();
 
-        Product product = Product.builder()
-                .productId(1)
-                .description("Product 1 Tagetik")
-                .price(2.0)
-                .quantity(1)
-                .category(Category.CAT1)
-                .build();
+        Product product = new Product();
+        product.setProductId(2);
+        product.setDescription("Product 1 Tagetik");
+        product.setPrice(2.0);
+        product.setQuantity(1);
+        product.setCategory(Category.CAT1);
 
 
         ProductDecorator pd = productDecoratorFactory.decorate(product);
-        assertEquals(pd.compute(),2.0);
+        assertEquals(pd.compute(), 2.0);
 
     }
 
@@ -90,20 +85,17 @@ public class ProductDecoratorFactoryTest {
     public void computePriceForMultipleQuantity() {
 
         ProductDecoratorFactory productDecoratorFactory = new ProductDecoratorFactoryImpl();
-
-
-        Product product = Product.builder()
-                .productId(1)
-                .description("Product 1 Tagetik")
-                .price(2.0)
-                .quantity(3)
-                .category(Category.CAT1)
-                .build();
+        Product product = new Product();
+        product.setProductId(2);
+        product.setDescription("Product 1 Tagetik");
+        product.setPrice(2.0);
+        product.setQuantity(3);
+        product.setCategory(Category.CAT1);
 
         assertNotNull(productDecoratorFactory);
 
         ProductDecorator pd = productDecoratorFactory.decorate(product);
-        assertEquals(pd.compute(),6.0);
+        assertEquals(pd.compute(), 6.0);
 
     }
 
@@ -111,12 +103,8 @@ public class ProductDecoratorFactoryTest {
     public void computePriceForNullProduct() {
 
         ProductDecoratorFactory productDecoratorFactory = new ProductDecoratorFactoryImpl();
-
         Product p1 = null;
-
         assertNotNull(productDecoratorFactory);
-
-
         Throwable exception = assertThrows(IllegalArgumentException.class, () -> productDecoratorFactory.decorate(p1));
         assertEquals("Product must not be null", exception.getMessage());
 

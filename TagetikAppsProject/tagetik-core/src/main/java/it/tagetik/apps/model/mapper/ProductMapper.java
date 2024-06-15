@@ -10,6 +10,7 @@ import org.mapstruct.Mapping;
 public abstract class ProductMapper {
     @Mapping(target = "category",
             expression = "java(it.tagetik.apps.model.entity.Category.valueOf(src.getCategoryDescription()))")
+
     public abstract Product map(ProductDto src);
 
     @Mapping(target = "categoryDescription",
@@ -17,8 +18,7 @@ public abstract class ProductMapper {
     public abstract ProductDto map(Product src);
 
 
-
-    protected String mapCategory(Category category){
+    protected String mapCategory(Category category) {
         return category.name();
     }
 

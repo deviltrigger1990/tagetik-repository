@@ -12,10 +12,10 @@ import java.util.List;
 public interface ProductApi {
 
     @PostMapping
-    public ResponseEntity<ProductDto> addProduct(ProductDto product);
+    public ResponseEntity<ProductDto> addProduct( @RequestBody ProductDto product);
 
     @PutMapping
-    public ResponseEntity<ProductDto> updateProduct(ProductDto product);
+    public ResponseEntity<ProductDto> updateProduct(@RequestBody ProductDto product);
 
     @GetMapping
     public ResponseEntity<List<ProductDto>> getAll();

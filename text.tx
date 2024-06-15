@@ -34,3 +34,47 @@ POST http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products --> addProduct
 PUT http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products --> updateProduct
 GET http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products/categories/CAT1 --> getAllProductByCategory
 GET http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products/categories --> getAllProductsGroupedByCategory
+
+The endpoint http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products/categories groups products by all available categories and returns the DTO ProductByCategoryDto.
+This DTO is in the following complete format:
+[
+    {
+        "categoryDescription": "CAT2",
+        "products": [
+            {
+                "creationDate": null,
+                "updatedAt": null,
+                "productId": 2,
+                "description": "Prodotto di esempio CAT2",
+                "categoryDescription": "CAT2",
+                "quantity": 10,
+                "price": 99.99
+            },
+            {
+                "creationDate": null,
+                "updatedAt": null,
+                "productId": 3,
+                "description": "Prodotto di esempio CAT2",
+                "categoryDescription": "CAT2",
+                "quantity": 10,
+                "price": 99.99
+            }
+        ]
+    },
+    {
+        "categoryDescription": "CAT1",
+        "products": [
+            {
+                "creationDate": null,
+                "updatedAt": null,
+                "productId": 1,
+                "description": "Prodotto di esempio",
+                "categoryDescription": "CAT1",
+                "quantity": 10,
+                "price": 99.99
+            }
+        ]
+    }
+]
+
+In this way, the frontend can analyze and process the data as it arrives in the complete format described above

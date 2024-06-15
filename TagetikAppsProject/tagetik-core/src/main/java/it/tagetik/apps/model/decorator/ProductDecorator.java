@@ -4,12 +4,11 @@ import it.tagetik.apps.model.entity.Product;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @Getter
 @Builder
 @AllArgsConstructor
-public  class ProductDecorator {
+public class ProductDecorator {
 
     private final Product product;
 

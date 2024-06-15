@@ -4,7 +4,7 @@ import it.tagetik.apps.model.entity.Product;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ProductDecoratorFactoryImpl implements ProductDecoratorFactory{
+public class ProductDecoratorFactoryImpl implements ProductDecoratorFactory {
 
     @Override
     public ProductDecorator decorate(Product product) {
