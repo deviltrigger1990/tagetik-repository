@@ -49,7 +49,7 @@ public class ProductServiceTest {
                 .build();
 
         ProductDto product2 = ProductDto.builder()
-                .categoryDescription("CAT2")
+                .categoryDescription("CAT3")
                 .description("PROD 2")
                 .price(3.0)
                 .quantity(1)
@@ -62,9 +62,18 @@ public class ProductServiceTest {
                 .quantity(1)
                 .build();
 
+        ProductDto product4 = ProductDto.builder()
+                .categoryDescription("CAT1")
+                .description("PROD 4")
+                .price(3.0)
+                .quantity(1)
+                .build();
+
         productService.addProduct(product1);
         productService.addProduct(product2);
         productService.addProduct(product3);
+        productService.addProduct(product4);
+
 
     }
 
@@ -101,7 +110,7 @@ public class ProductServiceTest {
     @Test
     public void testAllProducts() {
         List<ProductDto> products = productService.getAll();
-        assertEquals(products.size(), 3);
+        assertEquals(products.size(), 4);
 
     }
 
@@ -121,6 +130,67 @@ public class ProductServiceTest {
     public void testGetProductByIdButProductNotFound() {
 
         Integer productId= 9999999;
+
+        Throwable exception = assertThrows(ProductNotFoundException.class, () -> productService.getByProductId(productId));
+        assertEquals(
+                String.format("Product with id %s not found",productId), exception.getMessage());
+
+    }
+
+    @Test
+    public void testGetProductByCategory(){
+
+        List<ProductDto> productsByCat1 = productService.getAllProductByCategory("CAT1");
+        assertEquals(productsByCat1.size(), 2);
+        assertTrue(
+                productsByCat1.stream().allMatch(
+                        product -> product.getCategoryDescription().equals("CAT1")));
+
+    }
+
+    @Test
+    public void testGetProductByCategoryButNotExistProductBelongToThatCategory(){
+        List<ProductDto> productsByCat1 = productService.getAllProductByCategory("CAT2");
+        assertTrue(productsByCat1.isEmpty());
+    }
+
+    @Test
+    public void testUpdateProductWithANewOne(){
+        List<ProductDto> products = productService.getAll();
+
+        ProductDto productToUpdate = products.iterator().next();
+        ProductDto newProduct = ProductDto
+                .builder()
+                        .productId(productToUpdate.getProductId())
+                .quantity(999)
+                .categoryDescription("CAT3")
+                .description("New Description")
+                .price(999.0)
+                .build();
+
+        productService.updateProduct(newProduct);
+        assertEquals(newProduct.getQuantity(),999);
+        assertEquals(newProduct.getCategoryDescription(),"CAT3");
+        assertEquals(newProduct.getDescription(),"New Description");
+        assertEquals(newProduct.getPrice(),999.0);
+
+    }
+
+    @Test
+    public void testUpdateProductWithWithIdThatDoesNotExist(){
+        List<ProductDto> products = productService.getAll();
+
+        Integer productId = 9999999;
+
+        ProductDto productToUpdate = products.iterator().next();
+        ProductDto newProduct = ProductDto
+                .builder()
+                .productId(productId)
+                .quantity(999)
+                .categoryDescription("CAT3")
+                .description("New Description")
+                .price(999.0)
+                .build();
 
         Throwable exception = assertThrows(ProductNotFoundException.class, () -> productService.getByProductId(productId));
         assertEquals(

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
     @Override
     public void validate(ProductDto product) throws ProductValidationException {
 
-        Integer quantity = product.getQuantity();
+        int quantity = product.getQuantity();
         double price = product.getPrice();
 
         if(quantity < 0){

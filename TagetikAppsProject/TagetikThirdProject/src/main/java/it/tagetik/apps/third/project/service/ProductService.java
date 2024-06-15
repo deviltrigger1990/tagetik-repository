@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+
 import static java.util.stream.Collectors.toList;
 
 @Service
@@ -46,7 +47,7 @@ public class ProductService {
                     productFound.setQuantity(product.getQuantity());
                     return productFound;
                 }).orElseThrow(() -> new ProductNotFoundException((
-                        String.format("Product with id %s not found",product.getProductId()))));
+                        String.format("Product with id %s not found", product.getProductId()))));
         productRepository.save(productUpdate);
         return product;
     }
@@ -62,7 +63,7 @@ public class ProductService {
         return productRepository.findById(Long.valueOf(productId))
                 .map(productMapper::map)
                 .orElseThrow(() -> new ProductNotFoundException((
-                        String.format("Product with id %s not found",productId))));
+                        String.format("Product with id %s not found", productId))));
     }
 
     public List<ProductDto> getAllProductByCategory(@PathVariable(name = "category") String category) {
@@ -73,7 +74,6 @@ public class ProductService {
                 .collect(toList());
     }
 
-    ;
 
     public List<ProductByCategoryDto> getAllProductsGroupedByCategory() {
         Multimap<String, ProductDto> categoryVsProducts = ArrayListMultimap.create();
