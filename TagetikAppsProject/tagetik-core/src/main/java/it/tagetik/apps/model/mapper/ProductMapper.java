@@ -8,11 +8,15 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public abstract class ProductMapper {
+    @Mapping(target = "category",
+            expression = "java(it.tagetik.apps.model.entity.Category.valueOf(src.getCategoryDescription()))")
     public abstract Product map(ProductDto src);
 
     @Mapping(target = "categoryDescription",
             expression = "java(mapCategory(src.getCategory()))")
     public abstract ProductDto map(Product src);
+
+
 
     protected String mapCategory(Category category){
         return category.name();

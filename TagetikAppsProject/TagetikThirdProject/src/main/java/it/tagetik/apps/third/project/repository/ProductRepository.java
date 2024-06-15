@@ -1,4 +1,4 @@
-package it.tagetik.apps.first.project.repository;
+package it.tagetik.apps.third.project.repository;
 
 import it.tagetik.apps.model.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;

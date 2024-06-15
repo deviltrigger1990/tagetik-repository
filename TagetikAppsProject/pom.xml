@@ -77,9 +77,9 @@
     </dependencies>
 
     <modules>
-        <module>TagetikFirstProject</module>
-        <module>TagetikSecondProject</module>
         <module>TagetikThirdProject</module>
+        <module>TagetikSecondProject</module>
+        <module>TagetikFirstProject</module>
         <module>tagetik-core</module>
     </modules>
 
