@@ -40,7 +40,6 @@ public class ValidatorServiceTest {
     @Test
     public void testProductWithNegativePrice(){
 
-
         ProductDto product = ProductDto.builder()
                 .productId(2)
                 .price(-2.3)
@@ -48,7 +47,6 @@ public class ValidatorServiceTest {
 
         Throwable exception = assertThrows(ProductValidationException.class, () -> productValidator.validate(product));
         assertEquals("Price could not be a negative value", exception.getMessage());
-
 
     }
 

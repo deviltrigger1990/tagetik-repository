@@ -16,8 +16,7 @@ public class ProductByCategoryMapperImpl implements ProductByCategoryMapper {
 
         List<ProductByCategoryDto> productsByCategory = new ArrayList<>();
 
-        for (Map.Entry<String, ProductDto> entry : categoryVsProducts.entries()) {
-            String categoryAsKey = entry.getKey();
+        for ( String categoryAsKey : categoryVsProducts.keySet()) {
             List<ProductDto> products = categoryVsProducts.get(categoryAsKey).stream().toList();
 
             productsByCategory.add(ProductByCategoryDto.builder().

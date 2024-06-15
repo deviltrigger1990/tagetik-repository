@@ -2,9 +2,11 @@ package tagetik.firsttest;
 
 import it.tagetik.apps.model.dto.ProductDto;
 import it.tagetik.apps.third.project.Application;
+import it.tagetik.apps.third.project.dto.ProductByCategoryDto;
 import it.tagetik.apps.third.project.exception.ProductNotFoundException;
 import it.tagetik.apps.third.project.repository.ProductRepository;
 import it.tagetik.apps.third.project.service.ProductService;
+import org.assertj.core.util.Lists;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -195,6 +197,47 @@ public class ProductServiceTest {
         Throwable exception = assertThrows(ProductNotFoundException.class, () -> productService.getByProductId(productId));
         assertEquals(
                 String.format("Product with id %s not found",productId), exception.getMessage());
+
+
+    }
+
+    @Test
+    public void testGroupProductByAllCategory(){
+
+        List<ProductByCategoryDto> productsAggregateByCategory = productService.getAllProductsGroupedByCategory();
+
+        List<ProductDto> productsByCat1 = productsAggregateByCategory.stream()
+                .filter(productAggregate -> productAggregate.getCategoryDescription().equals("CAT1"))
+                .flatMap(productAggr -> productAggr.getProducts().stream())
+                .toList();
+
+        assertEquals(productsByCat1.size(),2);
+
+        assertTrue(productsByCat1.stream().anyMatch(
+                product -> product.getDescription().equals("PROD 1")));
+        assertTrue(productsByCat1.stream().anyMatch(
+                product -> product.getDescription().equals("PROD 4")));
+
+        List<ProductDto> productsByCat3 = productsAggregateByCategory.stream()
+                .filter(productAggregate -> productAggregate.getCategoryDescription().equals("CAT3"))
+                .flatMap(productAggr -> productAggr.getProducts().stream())
+                .toList();
+
+
+        assertEquals(productsByCat3.size(),2);
+        assertTrue(productsByCat3.stream().anyMatch(
+                product -> product.getDescription().equals("PROD 2")));
+        assertTrue(productsByCat3.stream().anyMatch(
+                product -> product.getDescription().equals("PROD 3")));
+
+        List<ProductDto> productsByCat2 = productsAggregateByCategory.stream()
+                .filter(productAggregate -> productAggregate.getCategoryDescription().equals("CAT2"))
+                .flatMap(productAggr -> productAggr.getProducts().stream())
+                .toList();
+
+        assertEquals(productsByCat2.size(),0);
+
+
 
 
     }
