@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
- class Excercise2RunnerImpl implements Excercise2Runner {
+ class CategoryTotalAmountCalculatorImpl implements CategoryTotalAmountCalculator {
 
     @Autowired
     private ProductDecoratorFactory productDecoratorFactory;

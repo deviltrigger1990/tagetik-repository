@@ -1,6 +1,7 @@
 package it.tagetik.apps.third.project.tree;
 
 import it.tagetik.apps.model.entity.Category;
+import it.tagetik.apps.third.project.tree.data.TreeNode;
 
 import java.util.List;
 
@@ -12,13 +13,6 @@ import java.util.List;
 
 public interface CategoryAllDescendantsRetriever {
 
-    /**
-     * A node of the tree.
-     */
-    class TreeNode {
-        Category category;
-        List<TreeNode> children;
-    }
 
     /**
      * @param category the category of which find all descendants

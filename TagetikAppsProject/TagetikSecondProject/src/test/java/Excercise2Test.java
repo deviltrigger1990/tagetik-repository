@@ -3,7 +3,7 @@ import it.tagetik.apps.model.decorator.ProductDecoratorFactory;
 import it.tagetik.apps.model.entity.Category;
 import it.tagetik.apps.model.entity.Product;
 import it.tagetik.apps.second.project.Application;
-import it.tagetik.apps.second.project.Excercise2Runner;
+import it.tagetik.apps.second.project.CategoryTotalAmountCalculator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class Excercise2Test {
     private ProductDecoratorFactory productDecoratorFactory;
 
     @Autowired
-    private Excercise2Runner excercise2Runner;
+    private CategoryTotalAmountCalculator excercise2Runner;
 
     @Test
     public void computePriceForOneQuantity() {

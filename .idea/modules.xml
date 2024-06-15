@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TagetikAppsProject/TagetikFirstProject/TagetikFirstProject.iml" filepath="$PROJECT_DIR$/TagetikAppsProject/TagetikFirstProject/TagetikFirstProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/TagetikAppsProject/TagetikSecondProject/TagetikSecondProject.iml" filepath="$PROJECT_DIR$/TagetikAppsProject/TagetikSecondProject/TagetikSecondProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TagetikAppsProject/TagetikThirdProject/TagetikThirdProject.iml" filepath="$PROJECT_DIR$/TagetikAppsProject/TagetikThirdProject/TagetikThirdProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/tagetik-repository.iml" filepath="$PROJECT_DIR$/.idea/tagetik-repository.iml" />
     </modules>
   </component>

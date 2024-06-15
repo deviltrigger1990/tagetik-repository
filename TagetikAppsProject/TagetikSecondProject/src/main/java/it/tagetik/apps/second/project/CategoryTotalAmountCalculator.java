@@ -11,7 +11,7 @@ import java.util.List;
  * excercise provide by Tagetik
  */
 
-public interface Excercise2Runner {
+public interface CategoryTotalAmountCalculator {
 
     /**
      * @param products the list of products *
