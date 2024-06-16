@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static java.util.stream.Collectors.toList;
@@ -32,8 +33,10 @@ public class ProductService {
 
     public ProductDto addProduct(ProductDto product) {
         Product productEntity = productMapper.map(product);
+        productEntity.setCreationDate(LocalDateTime.now());
+        productEntity.setUpdatedAt(LocalDateTime.now());
         productRepository.save(productEntity);
-        return product;
+        return productMapper.map(productEntity);
     }
 
     public ProductDto updateProduct(ProductDto product) {
@@ -48,8 +51,9 @@ public class ProductService {
                     return productFound;
                 }).orElseThrow(() -> new ProductNotFoundException((
                         String.format("Product with id %s not found", product.getProductId()))));
+        productUpdate.setUpdatedAt(LocalDateTime.now());
         productRepository.save(productUpdate);
-        return product;
+        return  productMapper.map(productUpdate);
     }
 
     public List<ProductDto> getAll() {

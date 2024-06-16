@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Component
 public class ProductByCategoryMapperImpl implements ProductByCategoryMapper {
@@ -16,7 +15,7 @@ public class ProductByCategoryMapperImpl implements ProductByCategoryMapper {
 
         List<ProductByCategoryDto> productsByCategory = new ArrayList<>();
 
-        for ( String categoryAsKey : categoryVsProducts.keySet()) {
+        for (String categoryAsKey : categoryVsProducts.keySet()) {
             List<ProductDto> products = categoryVsProducts.get(categoryAsKey).stream().toList();
 
             productsByCategory.add(ProductByCategoryDto.builder().

@@ -24,18 +24,17 @@ public class Excercise2Test {
     private ProductDecoratorFactory productDecoratorFactory;
 
     @Autowired
-    private CategoryTotalAmountCalculator excercise2Runner;
+    private CategoryTotalAmountCalculator categoryTotalAmountCalculator;
 
     @Test
     public void computePriceForOneQuantity() {
 
-        Product product = Product.builder()
-                        .productId(1)
-                        .description("Product 1 Tagetik")
-                        .price(2.0)
-                        .quantity(1)
-                        .category(Category.CAT1)
-                        .build();
+        Product product = new Product();
+        product.setProductId(1);
+        product.setDescription("Product 1 Tagetik");
+        product.setPrice(2.0);
+        product.setQuantity(1);
+        product.setCategory(Category.CAT1);
 
         assertNotNull(productDecoratorFactory);
 
@@ -47,13 +46,12 @@ public class Excercise2Test {
     @Test
     public void computePriceForMultipleQuantity() {
 
-        Product product = Product.builder()
-                .productId(1)
-                .description("Product 1 Tagetik")
-                .price(2.0)
-                .quantity(3)
-                .category(Category.CAT1)
-                .build();
+        Product product = new Product();
+        product.setProductId(1);
+        product.setDescription("Product 1 Tagetik");
+        product.setPrice(2.0);
+        product.setQuantity(3);
+        product.setCategory(Category.CAT1);
 
         assertNotNull(productDecoratorFactory);
 
@@ -65,86 +63,80 @@ public class Excercise2Test {
     @Test
     public void computePriceForOneProductMatchCategory() {
 
-        Product product1 = Product.builder()
-                .productId(1)
-                .description("Product 1 Tagetik")
-                .price(2.0)
-                .quantity(3)
-                .category(Category.CAT1)
-                .build();
+        Product product1 = new Product();
+        product1.setProductId(1);
+        product1.setDescription("Product 1 Tagetik");
+        product1.setPrice(2.0);
+        product1.setQuantity(3);
+        product1.setCategory(Category.CAT1);
 
-        Product product2 = Product.builder()
-                .productId(1)
-                .description("Product 2 Tagetik")
-                .price(2.0)
-                .quantity(3)
-                .category(Category.CAT2)
-                .build();
+        Product product2 = new Product();
+        product2.setProductId(1);
+        product2.setDescription("Product 1 Tagetik");
+        product2.setPrice(2.0);
+        product2.setQuantity(3);
+        product2.setCategory(Category.CAT2);
 
-        assertEquals(excercise2Runner.amount(Arrays.asList(product1,product2),Category.CAT1),6.0);
-        assertNotEquals(excercise2Runner.amount(Arrays.asList(product1,product2),Category.CAT1),3.0);
+        assertEquals(categoryTotalAmountCalculator.amount(Arrays.asList(product1,product2),Category.CAT1),6.0);
+        assertNotEquals(categoryTotalAmountCalculator.amount(Arrays.asList(product1,product2),Category.CAT1),3.0);
 
     }
 
     @Test
     public void computePriceForOneProductMatchMultipleCategory() {
 
-        Product product1 = Product.builder()
-                .productId(1)
-                .description("Product 1 Tagetik")
-                .price(2.0)
-                .quantity(3)
-                .category(Category.CAT1)
-                .build();
+        Product product1 = new Product();
+        product1.setProductId(1);
+        product1.setDescription("Product 1 Tagetik");
+        product1.setPrice(2.0);
+        product1.setQuantity(3);
+        product1.setCategory(Category.CAT1);
 
-        Product product2 = Product.builder()
-                .productId(2)
-                .description("Product 2 Tagetik")
-                .price(2.0)
-                .quantity(3)
-                .category(Category.CAT2)
-                .build();
+        Product product2 = new Product();
+        product2.setProductId(2);
+        product2.setDescription("Product 2 Tagetik");
+        product2.setPrice(2.0);
+        product2.setQuantity(3);
+        product2.setCategory(Category.CAT2);
 
-        Product product3 = Product.builder()
-                .productId(3)
-                .description("Product 3 Tagetik")
-                .price(2.0)
-                .quantity(3)
-                .category(Category.CAT1)
-                .build();
+        Product product3 = new Product();
+        product3.setProductId(2);
+        product3.setDescription("Product 2 Tagetik");
+        product3.setPrice(2.0);
+        product3.setQuantity(3);
+        product3.setCategory(Category.CAT1);
 
-        assertEquals(excercise2Runner.amount(Arrays.asList(product1,product2,product3),Category.CAT1),12.0);
+        assertEquals(categoryTotalAmountCalculator.amount(Arrays.asList(product1,product2,product3),Category.CAT1),12.0);
 
     }
 
     @Test
     public void computePriceNoMatching() {
 
-        Product product1 = Product.builder()
-                .productId(1)
-                .description("Product 1 Tagetik")
-                .price(2.0)
-                .quantity(3)
-                .category(Category.CAT1)
-                .build();
+        Product product1 = new Product();
+        product1.setProductId(1);
+        product1.setDescription("Product 1 Tagetik");
+        product1.setPrice(2.0);
+        product1.setQuantity(3);
+        product1.setCategory(Category.CAT1);
 
-        Product product2 = Product.builder()
-                .productId(2)
-                .description("Product 2 Tagetik")
-                .price(2.0)
-                .quantity(3)
-                .category(Category.CAT2)
-                .build();
+        Product product2 = new Product();
+        product2.setProductId(2);
+        product2.setDescription("Product 2 Tagetik");
+        product2.setPrice(2.0);
+        product2.setQuantity(3);
+        product2.setCategory(Category.CAT2);
 
-        Product product3 = Product.builder()
-                .productId(3)
-                .description("Product 3 Tagetik")
-                .price(2.0)
-                .quantity(3)
-                .category(Category.CAT1)
-                .build();
+        Product product3 = new Product();
+        product3.setProductId(2);
+        product3.setDescription("Product 2 Tagetik");
+        product3.setPrice(2.0);
+        product3.setQuantity(3);
+        product3.setCategory(Category.CAT2);
 
-        assertEquals(excercise2Runner.amount(Arrays.asList(product1,product2,product3),Category.CAT3),0);
+
+
+        assertEquals(categoryTotalAmountCalculator.amount(Arrays.asList(product1,product2,product3),Category.CAT3),0);
 
     }
 

@@ -1,6 +1,6 @@
 import it.tagetik.apps.first.project.Application;
+import it.tagetik.apps.first.project.tree.CategoryAllDescendantsRetriever;
 import it.tagetik.apps.model.entity.Category;
-import it.tagetik.apps.third.project.tree.CategoryAllDescendantsRetriever;
 import it.tagetik.apps.third.project.tree.data.TreeNode;
 import org.junit.Test;
 import org.junit.runner.RunWith;

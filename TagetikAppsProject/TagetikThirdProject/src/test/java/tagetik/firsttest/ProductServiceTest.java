@@ -6,7 +6,6 @@ import it.tagetik.apps.third.project.dto.ProductByCategoryDto;
 import it.tagetik.apps.third.project.exception.ProductNotFoundException;
 import it.tagetik.apps.third.project.repository.ProductRepository;
 import it.tagetik.apps.third.project.service.ProductService;
-import org.assertj.core.util.Lists;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -131,16 +130,16 @@ public class ProductServiceTest {
     @Test
     public void testGetProductByIdButProductNotFound() {
 
-        Integer productId= 9999999;
+        Integer productId = 9999999;
 
         Throwable exception = assertThrows(ProductNotFoundException.class, () -> productService.getByProductId(productId));
         assertEquals(
-                String.format("Product with id %s not found",productId), exception.getMessage());
+                String.format("Product with id %s not found", productId), exception.getMessage());
 
     }
 
     @Test
-    public void testGetProductByCategory(){
+    public void testGetProductByCategory() {
 
         List<ProductDto> productsByCat1 = productService.getAllProductByCategory("CAT1");
         assertEquals(productsByCat1.size(), 2);
@@ -151,19 +150,19 @@ public class ProductServiceTest {
     }
 
     @Test
-    public void testGetProductByCategoryButNotExistProductBelongToThatCategory(){
+    public void testGetProductByCategoryButNotExistProductBelongToThatCategory() {
         List<ProductDto> productsByCat1 = productService.getAllProductByCategory("CAT2");
         assertTrue(productsByCat1.isEmpty());
     }
 
     @Test
-    public void testUpdateProductWithANewOne(){
+    public void testUpdateProductWithANewOne() {
         List<ProductDto> products = productService.getAll();
 
         ProductDto productToUpdate = products.iterator().next();
         ProductDto newProduct = ProductDto
                 .builder()
-                        .productId(productToUpdate.getProductId())
+                .productId(productToUpdate.getProductId())
                 .quantity(999)
                 .categoryDescription("CAT3")
                 .description("New Description")
@@ -171,15 +170,15 @@ public class ProductServiceTest {
                 .build();
 
         productService.updateProduct(newProduct);
-        assertEquals(newProduct.getQuantity(),999);
-        assertEquals(newProduct.getCategoryDescription(),"CAT3");
-        assertEquals(newProduct.getDescription(),"New Description");
-        assertEquals(newProduct.getPrice(),999.0);
+        assertEquals(newProduct.getQuantity(), 999);
+        assertEquals(newProduct.getCategoryDescription(), "CAT3");
+        assertEquals(newProduct.getDescription(), "New Description");
+        assertEquals(newProduct.getPrice(), 999.0);
 
     }
 
     @Test
-    public void testUpdateProductWithWithIdThatDoesNotExist(){
+    public void testUpdateProductWithIdThatDoesNotExist() {
         List<ProductDto> products = productService.getAll();
 
         Integer productId = 9999999;
@@ -196,13 +195,13 @@ public class ProductServiceTest {
 
         Throwable exception = assertThrows(ProductNotFoundException.class, () -> productService.getByProductId(productId));
         assertEquals(
-                String.format("Product with id %s not found",productId), exception.getMessage());
+                String.format("Product with id %s not found", productId), exception.getMessage());
 
 
     }
 
     @Test
-    public void testGroupProductByAllCategory(){
+    public void testGroupProductByAllCategory() {
 
         List<ProductByCategoryDto> productsAggregateByCategory = productService.getAllProductsGroupedByCategory();
 
@@ -211,7 +210,7 @@ public class ProductServiceTest {
                 .flatMap(productAggr -> productAggr.getProducts().stream())
                 .toList();
 
-        assertEquals(productsByCat1.size(),2);
+        assertEquals(productsByCat1.size(), 2);
 
         assertTrue(productsByCat1.stream().anyMatch(
                 product -> product.getDescription().equals("PROD 1")));
@@ -224,7 +223,7 @@ public class ProductServiceTest {
                 .toList();
 
 
-        assertEquals(productsByCat3.size(),2);
+        assertEquals(productsByCat3.size(), 2);
         assertTrue(productsByCat3.stream().anyMatch(
                 product -> product.getDescription().equals("PROD 2")));
         assertTrue(productsByCat3.stream().anyMatch(
@@ -235,14 +234,10 @@ public class ProductServiceTest {
                 .flatMap(productAggr -> productAggr.getProducts().stream())
                 .toList();
 
-        assertEquals(productsByCat2.size(),0);
-
-
+        assertEquals(productsByCat2.size(), 0);
 
 
     }
-
-
 
 
 }

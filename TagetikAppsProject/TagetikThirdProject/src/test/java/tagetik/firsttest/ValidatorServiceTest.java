@@ -2,7 +2,6 @@ package tagetik.firsttest;
 
 import it.tagetik.apps.model.dto.ProductDto;
 import it.tagetik.apps.third.project.Application;
-import it.tagetik.apps.third.project.exception.ProductNotFoundException;
 import it.tagetik.apps.third.project.exception.ProductValidationException;
 import it.tagetik.apps.third.project.validator.ProductValidator;
 import org.junit.Test;
@@ -24,7 +23,7 @@ public class ValidatorServiceTest {
     private ProductValidator productValidator;
 
     @Test
-    public void testProductWithNegativeQuantity(){
+    public void testProductWithNegativeQuantity() {
 
 
         ProductDto product = ProductDto.builder()
@@ -38,7 +37,7 @@ public class ValidatorServiceTest {
     }
 
     @Test
-    public void testProductWithNegativePrice(){
+    public void testProductWithNegativePrice() {
 
         ProductDto product = ProductDto.builder()
                 .productId(2)
