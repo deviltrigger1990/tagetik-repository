@@ -12,10 +12,14 @@
     <groupId>it.tagetik.apps.second.project</groupId>
     <artifactId>TagetikSecondProject</artifactId>
 
-    <properties>
-        <maven.compiler.source>22</maven.compiler.source>
-        <maven.compiler.target>22</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>it.tagetik.apps</groupId>
+            <artifactId>tagetik-core</artifactId>
+            <version>1.0.0-tagetik-app-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
+
 
 </project>

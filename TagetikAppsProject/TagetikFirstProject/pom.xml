@@ -3,9 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>it.tagetik.apps.first.projects</groupId>
+    <parent>
+        <groupId>it.tagetik.apps</groupId>
+        <artifactId>TagetikAppsProject</artifactId>
+        <version>1.0.0-tagetik-app-SNAPSHOT</version>
+    </parent>
+
+    <groupId>it.tagetik.apps.second.project</groupId>
     <artifactId>TagetikFirstProject</artifactId>
-    <version>1.0-SNAPSHOT</version>
+
 
     <dependencies>
         <dependency>
@@ -15,28 +21,5 @@
         </dependency>
 
     </dependencies>
-
-    <parent>
-        <groupId>it.tagetik.apps</groupId>
-        <artifactId>TagetikAppsProject</artifactId>
-        <version>1.0.0-tagetik-app-SNAPSHOT</version>
-    </parent>
-
-    <properties>
-        <maven.compiler.source>22</maven.compiler.source>
-        <maven.compiler.target>22</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>1.2.7.RELEASE</version>
-            </plugin>
-        </plugins>
-    </build>
-
 
 </project>

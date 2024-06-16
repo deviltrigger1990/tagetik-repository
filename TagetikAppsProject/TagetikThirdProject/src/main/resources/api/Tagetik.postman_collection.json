@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "b3842eba-fb64-4457-a5a8-f6d0914f66c5",
+		"name": "Tagetik",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5777982"
+	},
+	"item": [
+		{
+			"name": "getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tagetik",
+						"tagetik-webapps",
+						"1.0.0",
+						"products",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByProductId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tagetik",
+						"tagetik-webapps",
+						"1.0.0",
+						"products",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addProduct",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"description\": \"Sample Product CAT2\",\r\n\"categoryDescription\": \"CAT2\",\r\n\"quantity\": 10,\r\n\"price\": 99.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tagetik",
+						"tagetik-webapps",
+						"1.0.0",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateProduct",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productId\": 1,\r\n    \"description\": \"Sample Product Update\",\r\n    \"categoryDescription\": \"CAT1\",\r\n    \"quantity\": 10,\r\n    \"price\": 99.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tagetik",
+						"tagetik-webapps",
+						"1.0.0",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllProductByCategory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products/categories/CAT1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tagetik",
+						"tagetik-webapps",
+						"1.0.0",
+						"products",
+						"categories",
+						"CAT1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllProductsGroupedByCategory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tagetik",
+						"tagetik-webapps",
+						"1.0.0",
+						"products",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,80 @@
+The project requested by Tagetik is a Maven multi-module project. This project consists of a root parent project called `TagetikAppsProject` which includes the utilized modules and some common dependencies 
+to correctly start the projects. The plugins (MapStruct, Lombok) that I have used within this project are also configured.
+
+The modules are as follows:
+
+1. **tagetik-core**:
+   - Includes the data model.
+   - For this simple project, a `Product` class is provided which extends a hypothetical abstract class containing common attributes (`id`, `createdDate`, `updatedAt`) of a hypothetical database table.
+   - A decorator design pattern is defined to enhance the initial `Product` class by adding the required business logic operation (calculating the product price as the product of the price and the quantity of the products).
+   - DTOs (Data Transfer Objects) are returned in response to a potential frontend client.
+   - Mappers map the entities to the database.
+   - Entities and DTOs are constructed using the Lombok framework, and methods like getters, setters, constructors, and builders are defined.
+   - Sometimes, where an object requires many attributes to be instantiated, I prefer using a builder which makes the object construction simpler and clearer in terms of the parameters being built.
+
+2. **TagetikFirstProject**:
+   - Utilizes the `CategoryAllDescendantsRetriever` interface to retrieve all descendant children from a parent that belongs to a certain category.
+   - You can run the `ExerciseTest1` class to execute all tests required by the interface. The algorithm simulates the tree structure using nested lists within the root node. 
+     The descendant search is performed through a recursive search algorithm (this calls itself during the program execution).
+
+3. **TagetikSecondProject**:
+   - Uses the `CategoryTotalAmountCalculator` interface to calculate the business logic required by the exercise. Specifically, it calculates the price as `price * quantity` 
+	 for products belonging to a specific category. I have only used the `Stream` class as required by the exercise.
+
+4. **TagetikThirdProject**:
+   - Exposes REST services that rely on a CRUD repository to interact with the database and a service to return the data required by the interface. The APIs use the `ValidatorProduct` 
+     interface to validate the request coming from the frontend. These APIs do not directly return the entity but rather the DTO (`ProductDto`) with the required data.
+
+I briefly list the endpoints (tested on localhost) for which a configuration in json created and exported from Postman is present. This json can be imported into Postman to view the APIs.
+For completeness, I also list the endpoints of all the developed APIs (assuming an instance of Spring Boot is running on port 8080 of the localhost).
+
+GET http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products --> getAll
+GET http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products/4 --> getByProductId
+POST http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products --> addProduct
+PUT http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products --> updateProduct
+GET http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products/categories/CAT1 --> getAllProductByCategory
+GET http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products/categories --> getAllProductsGroupedByCategory
+
+The endpoint http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products/categories groups products by all available categories and returns the DTO ProductByCategoryDto.
+This DTO is in the following complete format:
+[
+    {
+        "categoryDescription": "CAT2",
+        "products": [
+            {
+                "creationDate": null,
+                "updatedAt": null,
+                "productId": 2,
+                "description": "Prodotto di esempio CAT2",
+                "categoryDescription": "CAT2",
+                "quantity": 10,
+                "price": 99.99
+            },
+            {
+                "creationDate": null,
+                "updatedAt": null,
+                "productId": 3,
+                "description": "Prodotto di esempio CAT2",
+                "categoryDescription": "CAT2",
+                "quantity": 10,
+                "price": 99.99
+            }
+        ]
+    },
+    {
+        "categoryDescription": "CAT1",
+        "products": [
+            {
+                "creationDate": null,
+                "updatedAt": null,
+                "productId": 1,
+                "description": "Prodotto di esempio",
+                "categoryDescription": "CAT1",
+                "quantity": 10,
+                "price": 99.99
+            }
+        ]
+    }
+]
+
+In this way, the frontend can analyze and process the data as it arrives in the complete format described above
