@@ -8,3 +8,4 @@ spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
 spring.datasource.hikari.connectionTimeout=20000
 spring.datasource.hikari.maximumPoolSize=5
 
+-

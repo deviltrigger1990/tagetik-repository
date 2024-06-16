@@ -1,7 +1,6 @@
 package it.tagetik.apps.third.project.api;
 
 import it.tagetik.apps.model.dto.ProductDto;
-import it.tagetik.apps.model.entity.Product;
 import it.tagetik.apps.third.project.dto.ProductByCategoryDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

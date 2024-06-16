@@ -2,8 +2,6 @@ package it.tagetik.apps.first.project.tree;
 
 import it.tagetik.apps.model.entity.Category;
 import it.tagetik.apps.third.project.tree.data.TreeNode;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -12,24 +10,16 @@ import java.util.List;
 @Component
 class CategoryAllDescendantsRetrieverImpl implements CategoryAllDescendantsRetriever {
 
-    @Getter
-    @AllArgsConstructor
-    static class CategoryWithOriginalMatching {
-
-        Category categoryMatching;
-        Category childCategory;
-
-    }
 
     @Override
     public List<Category> findAllDescendantsBy(Category category, TreeNode root) {
 
         List<Category> categories = new ArrayList<>();
-        visitCategories(root, category, categories);
+        visitTreeNode(root, category, categories);
         return categories;
     }
 
-    private void visitCategories(TreeNode currentNode, Category category, List<Category> categories) {
+    private void visitTreeNode(TreeNode currentNode, Category category, List<Category> categories) {
 
         boolean currentNodeIsALeaf = currentNode.getChildren() == null
                 || currentNode.getChildren().isEmpty();
@@ -51,11 +41,11 @@ class CategoryAllDescendantsRetrieverImpl implements CategoryAllDescendantsRetri
         }
 
 
-        if (!currentNodeIsALeaf && !rootCategoryAlreadyFound) {
             for (TreeNode categoryChildNode : currentNode.getChildren()) {
-                visitCategories(categoryChildNode, category, categories);
+                visitTreeNode(categoryChildNode, category, categories);
             }
         }
 
     }
-}
+
+
