@@ -13,13 +13,6 @@
             <artifactId>tagetik-core</artifactId>
             <version>1.0.0-tagetik-app-SNAPSHOT</version>
         </dependency>
-
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
     </dependencies>
 
     <parent>
