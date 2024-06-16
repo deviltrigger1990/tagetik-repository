@@ -25,7 +25,7 @@ The modules are as follows:
    - Exposes REST services that rely on a CRUD repository to interact with the database and a service to return the data required by the interface. The APIs use the `ValidatorProduct` 
      interface to validate the request coming from the frontend. These APIs do not directly return the entity but rather the DTO (`ProductDto`) with the required data.
 
-I briefly list the endpoints (tested on localhost) for which a configuration in json created and exported from PostgreSQL is present. This json can be imported into PostgreSQL to view the APIs. 
+I briefly list the endpoints (tested on localhost) for which a configuration in json created and exported from Postman is present. This json can be imported into Postman to view the APIs.
 For completeness, I also list the endpoints of all the developed APIs (assuming an instance of Spring Boot is running on port 8080 of the localhost).
 
 GET http://localhost:8080/tagetik/tagetik-webapps/1.0.0/products --> getAll
