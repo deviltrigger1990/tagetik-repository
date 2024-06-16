@@ -1,6 +1,5 @@
 package it.tagetik.apps.third.project.api;
 
-
 import it.tagetik.apps.model.dto.ProductDto;
 import it.tagetik.apps.third.project.dto.ProductByCategoryDto;
 import it.tagetik.apps.third.project.service.ProductService;

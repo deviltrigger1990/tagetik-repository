@@ -4,9 +4,7 @@ import it.tagetik.apps.model.decorator.ProductDecoratorFactoryImpl;
 import it.tagetik.apps.model.entity.Category;
 import it.tagetik.apps.model.entity.Product;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
-
 
 public class ProductDecoratorFactoryTest {
 
@@ -21,7 +19,6 @@ public class ProductDecoratorFactoryTest {
         product.setPrice(2.0);
         product.setQuantity(0);
         product.setCategory(Category.CAT1);
-
 
         ProductDecorator pd = productDecoratorFactory.decorate(product);
         assertEquals(pd.compute(), 0);

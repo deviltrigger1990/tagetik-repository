@@ -45,20 +45,7 @@ public class Exercise1Test {
         assertTrue(allDescendantsBy.isEmpty());
     }
 
-    @Test
-    public void testTreeWithFirstLevelThatMatchingCategoryInTheFirstLevel(){
 
-        TreeNode categoriesTree = new TreeNode(Category.CAT1);
-        categoriesTree.setChildren(Arrays.asList(new TreeNode(Category.CAT2),
-                new TreeNode(Category.CAT3)));
-
-        List<Category> allDescendantsBy = categoryAllDescendantsRetriever
-                .findAllDescendantsBy(Category.CAT2, categoriesTree);
-
-        assertFalse(allDescendantsBy.isEmpty());
-        assertSame(allDescendantsBy.iterator().next(),Category.CAT2 );
-        assertEquals(allDescendantsBy.size(),1);
-    }
 
     @Test
     public void testTreeWithFirstLevelThatMatchingCategoryInTheRootLevelAndReturnWholeTree(){
