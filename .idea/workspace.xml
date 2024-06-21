@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="171b4c11-35ec-47dd-8099-43f70dc5d5a5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/TagetikAppsProject/TagetikThirdProject/src/test/java/it/tagetik/apps/third/project/controller/ProductApiControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TagetikAppsProject/tagetik-core/src/main/java/it/tagetik/apps/model/deserialize/LocalDateTimeDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TagetikAppsProject/TagetikFirstProject/src/main/java/it/tagetik/apps/first/project/tree/CategoryAllDescendantsRetrieverImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/TagetikAppsProject/TagetikFirstProject/src/main/java/it/tagetik/apps/first/project/tree/CategoryAllDescendantsRetrieverImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TagetikAppsProject/TagetikThirdProject/src/main/java/it/tagetik/apps/third/project/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/TagetikAppsProject/TagetikThirdProject/src/main/java/it/tagetik/apps/third/project/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TagetikAppsProject/TagetikThirdProject/src/test/java/tagetik/firsttest/ProductServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/TagetikAppsProject/TagetikThirdProject/src/test/java/it/tagetik/apps/third/project/service/ProductServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TagetikAppsProject/TagetikThirdProject/src/test/java/tagetik/firsttest/ValidatorServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/TagetikAppsProject/TagetikThirdProject/src/test/java/it/tagetik/apps/third/project/validator/ValidatorServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TagetikAppsProject/tagetik-core/src/main/java/it/tagetik/apps/model/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/TagetikAppsProject/tagetik-core/src/main/java/it/tagetik/apps/model/dto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TagetikAppsProject/TagetikFirstProject/src/test/resources/application.properties.h2" beforeDir="false" afterPath="$PROJECT_DIR$/TagetikAppsProject/TagetikFirstProject/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TagetikAppsProject/TagetikSecondProject/src/test/resources/application.properties.h2" beforeDir="false" afterPath="$PROJECT_DIR$/TagetikAppsProject/TagetikSecondProject/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TagetikAppsProject/TagetikThirdProject/src/test/resources/application.properties.h2" beforeDir="false" afterPath="$PROJECT_DIR$/TagetikAppsProject/TagetikThirdProject/src/test/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,59 +47,59 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.it.tagetik.apps.second.project.Application.executor&quot;: &quot;Run&quot;,
-    &quot;Application.it.tagetik.apps.third.project.Application.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Excercise2Test.computePriceForOneProductMatchCategory.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Excercise2Test.computePriceForOneProductMatchMultipleCategory.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Excercise2Test.computePriceNoMatching.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Excercise2Test.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Excercise2Test.firstTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Exercise1Test.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Exercise1Test.test.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Exercise1Test.testTreeOfOneLevelButMatchingCategoryIsOnLeafNode.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Exercise1Test.testTreeWithFirstLevelThatMatchingCategoryInTheFirstLevel.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Exercise1Test.testTreeWithFirstLevelThatMatchingCategoryInTheRootLevelAndReturnSubTree.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Exercise1Test.testTreeWithFirstLevelThatMatchingCategoryInTheRootLevelAndReturnWholeTree.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.Exercise1Test.testTreeWithNodeWithOnlyChildThatMatchingCategoryInTheRootLevelAndReturnWholeTree.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Exercise1Test.testTreeWithOneLevelButCategoryNotMatching.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Exercise1Test.testTreeWithOnlyRootThatMatchingCategory.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Exercise1Test.testTreeWithOnlyRootThatNotMatchingCategory.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.Exercise1Test.testTreeWithTwoLevelButMatchingCategoryIsOnFirstLevelAndReturnSubTree.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductDateTimeValidatorTest.validateProductDateAgainstPattern.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductDecoratorFactoryTest.computePriceForNullProduct.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductDecoratorFactoryTest.computePriceForOneQuantity.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductDecoratorFactoryTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.testAddProduct.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.testAllProduct.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.testAllProducts.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ProductServiceTest.testGetProductByCategory.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.testGetProductByCategoryButNotExistProductBelongToThatCategory.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.testGetProductById.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.testGetProductByIdButProductNotFound.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.testGroupProductByAllCategory.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ProductServiceTest.testUpdateProductWithANewOne.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ProductServiceTest.testUpdateProductWithWithIdThatDoesNotExist.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TagetikHelloWordTest.firstTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TagetikHelloWordTest.test.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ValidatorServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ValidatorServiceTest.testProductWithNegativePrice.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ValidatorServiceTest.testProductWithNegativeQuantity.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;4-corretti-alcuni-test&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/passa/IdeaProjects/tagetik-repository/TagetikAppsProject&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/passa/IdeaProjects/tagetik-repository/TagetikAppsProject/tagetik-core/src/main/java/it/tagetik/apps/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Application.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.it.tagetik.apps.second.project.Application.executor": "Run",
+    "Application.it.tagetik.apps.third.project.Application.executor": "Run",
+    "JUnit.Excercise2Test.computePriceForOneProductMatchCategory.executor": "Run",
+    "JUnit.Excercise2Test.computePriceForOneProductMatchMultipleCategory.executor": "Run",
+    "JUnit.Excercise2Test.computePriceNoMatching.executor": "Run",
+    "JUnit.Excercise2Test.executor": "Run",
+    "JUnit.Excercise2Test.firstTest.executor": "Run",
+    "JUnit.Exercise1Test.executor": "Run",
+    "JUnit.Exercise1Test.test.executor": "Run",
+    "JUnit.Exercise1Test.testTreeOfOneLevelButMatchingCategoryIsOnLeafNode.executor": "Run",
+    "JUnit.Exercise1Test.testTreeWithFirstLevelThatMatchingCategoryInTheFirstLevel.executor": "Run",
+    "JUnit.Exercise1Test.testTreeWithFirstLevelThatMatchingCategoryInTheRootLevelAndReturnSubTree.executor": "Run",
+    "JUnit.Exercise1Test.testTreeWithFirstLevelThatMatchingCategoryInTheRootLevelAndReturnWholeTree.executor": "Debug",
+    "JUnit.Exercise1Test.testTreeWithNodeWithOnlyChildThatMatchingCategoryInTheRootLevelAndReturnWholeTree.executor": "Run",
+    "JUnit.Exercise1Test.testTreeWithOneLevelButCategoryNotMatching.executor": "Run",
+    "JUnit.Exercise1Test.testTreeWithOnlyRootThatMatchingCategory.executor": "Run",
+    "JUnit.Exercise1Test.testTreeWithOnlyRootThatNotMatchingCategory.executor": "Run",
+    "JUnit.Exercise1Test.testTreeWithTwoLevelButMatchingCategoryIsOnFirstLevelAndReturnSubTree.executor": "Run",
+    "JUnit.ProductDateTimeValidatorTest.validateProductDateAgainstPattern.executor": "Run",
+    "JUnit.ProductDecoratorFactoryTest.computePriceForNullProduct.executor": "Run",
+    "JUnit.ProductDecoratorFactoryTest.computePriceForOneQuantity.executor": "Run",
+    "JUnit.ProductDecoratorFactoryTest.executor": "Run",
+    "JUnit.ProductServiceTest.executor": "Run",
+    "JUnit.ProductServiceTest.testAddProduct.executor": "Run",
+    "JUnit.ProductServiceTest.testAllProduct.executor": "Run",
+    "JUnit.ProductServiceTest.testAllProducts.executor": "Debug",
+    "JUnit.ProductServiceTest.testGetProductByCategory.executor": "Run",
+    "JUnit.ProductServiceTest.testGetProductByCategoryButNotExistProductBelongToThatCategory.executor": "Run",
+    "JUnit.ProductServiceTest.testGetProductById.executor": "Run",
+    "JUnit.ProductServiceTest.testGetProductByIdButProductNotFound.executor": "Run",
+    "JUnit.ProductServiceTest.testGroupProductByAllCategory.executor": "Debug",
+    "JUnit.ProductServiceTest.testUpdateProductWithANewOne.executor": "Run",
+    "JUnit.ProductServiceTest.testUpdateProductWithWithIdThatDoesNotExist.executor": "Run",
+    "JUnit.TagetikHelloWordTest.firstTest.executor": "Run",
+    "JUnit.TagetikHelloWordTest.test.executor": "Run",
+    "JUnit.ValidatorServiceTest.executor": "Run",
+    "JUnit.ValidatorServiceTest.testProductWithNegativePrice.executor": "Run",
+    "JUnit.ValidatorServiceTest.testProductWithNegativeQuantity.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "6-implementare-i-test-del-web-layer",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/passa/IdeaProjects/tagetik-repository/TagetikAppsProject",
+    "onboarding.tips.debug.path": "C:/Users/passa/IdeaProjects/tagetik-repository/TagetikAppsProject/tagetik-core/src/main/java/it/tagetik/apps/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\passa\IdeaProjects\tagetik-repository\TagetikAppsProject\TagetikThirdProject\src\test\resources" />
