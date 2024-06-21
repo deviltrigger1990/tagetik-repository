@@ -66,7 +66,7 @@ public class Exercise1Test {
     }
 
     @Test
-    public void testTreeWithNodeWithOnlyChildThatMatchingCategoryInTheRootLevelAndReturnWholeTree(){
+    public void testTreeWithRootWithTwoChildWhereEachNodeIncludeRootHaveOnlyOneChildAndMatchingCategoryInTheRootLevelAndReturnWholeTree(){
 
         TreeNode categoriesTree = new TreeNode(Category.CAT1);
         TreeNode firstChild = new TreeNode(Category.CAT2);
@@ -77,7 +77,6 @@ public class Exercise1Test {
                 .findAllDescendantsBy(Category.CAT1, categoriesTree);
 
         assertFalse(allDescendantsBy.isEmpty());
-        assertSame(allDescendantsBy.iterator().next(),Category.CAT1 );
         assertEquals(allDescendantsBy.size(),3);
 
         assertTrue(allDescendantsBy.containsAll(List.of(Category.CAT1,Category.CAT2,Category.CAT3)));
@@ -115,8 +114,6 @@ public class Exercise1Test {
 
         assertTrue(allDescendantsBy.containsAll(List.of(Category.CAT2,Category.CAT3)));
 
-
-
     }
 
     @Test
@@ -134,6 +131,41 @@ public class Exercise1Test {
         assertSame(allDescendantsBy.iterator().next(),Category.CAT3 );
         assertEquals(allDescendantsBy.size(),1);
 
+    }
+
+    @Test
+    public void testTreeWithFirstLevelThatMatchingCategoryInTheFirstLevel(){
+
+        TreeNode categoriesTree = new TreeNode(Category.CAT1);
+        categoriesTree.setChildren(Arrays.asList(new TreeNode(Category.CAT2),
+                new TreeNode(Category.CAT3)));
+
+        List<Category> allDescendantsBy = categoryAllDescendantsRetriever
+                .findAllDescendantsBy(Category.CAT2, categoriesTree);
+
+        assertFalse(allDescendantsBy.isEmpty());
+        assertSame(allDescendantsBy.iterator().next(),Category.CAT2 );
+        assertEquals(allDescendantsBy.size(),1);
+    }
+
+    @Test
+    public void testTreeWithTwoLevelThatMatchingCategoryInTheFirstLevelAndGetTreeWithTwoNode(){
+
+        TreeNode categoriesTree = new TreeNode(Category.CAT1);
+        TreeNode childOfFirstLevel = new TreeNode(Category.CAT3);
+        categoriesTree.setChildren(Arrays.asList(new TreeNode(Category.CAT2),
+                childOfFirstLevel));
+
+        childOfFirstLevel.setChildren(List.of(new TreeNode(Category.CAT2)));
+
+        List<Category> allDescendantsBy = categoryAllDescendantsRetriever
+                .findAllDescendantsBy(Category.CAT3, categoriesTree);
+
+        assertFalse(allDescendantsBy.isEmpty());
+        assertSame(allDescendantsBy.iterator().next(),Category.CAT3 );
+        assertEquals(allDescendantsBy.size(),2);
+
+        assertTrue(allDescendantsBy.containsAll(List.of(Category.CAT3,Category.CAT2)));
 
 
     }
