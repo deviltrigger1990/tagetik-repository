@@ -1,11 +1,10 @@
-package tagetik.firsttest;
+package it.tagetik.apps.third.project.service;
 
 import it.tagetik.apps.model.dto.ProductDto;
 import it.tagetik.apps.third.project.Application;
 import it.tagetik.apps.third.project.dto.ProductByCategoryDto;
 import it.tagetik.apps.third.project.exception.ProductNotFoundException;
 import it.tagetik.apps.third.project.repository.ProductRepository;
-import it.tagetik.apps.third.project.service.ProductService;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -34,6 +33,7 @@ public class ProductServiceTest {
     public void setUp() {
         clearDb();
         populateDb();
+
     }
 
     @After
@@ -74,7 +74,6 @@ public class ProductServiceTest {
         productService.addProduct(product2);
         productService.addProduct(product3);
         productService.addProduct(product4);
-
 
     }
 

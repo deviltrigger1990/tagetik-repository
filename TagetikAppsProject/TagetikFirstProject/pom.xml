@@ -12,7 +12,6 @@
     <groupId>it.tagetik.apps.second.project</groupId>
     <artifactId>TagetikFirstProject</artifactId>
 
-
     <dependencies>
         <dependency>
             <groupId>it.tagetik.apps</groupId>
