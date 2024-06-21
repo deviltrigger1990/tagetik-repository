@@ -1,9 +1,8 @@
-package tagetik.firsttest;
+package it.tagetik.apps.third.project.validator;
 
 import it.tagetik.apps.model.dto.ProductDto;
 import it.tagetik.apps.third.project.Application;
 import it.tagetik.apps.third.project.exception.ProductValidationException;
-import it.tagetik.apps.third.project.validator.ProductValidator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

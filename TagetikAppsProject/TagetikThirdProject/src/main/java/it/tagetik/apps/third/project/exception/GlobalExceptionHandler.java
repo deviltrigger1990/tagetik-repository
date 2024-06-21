@@ -40,7 +40,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ProductValidationException.class)
     public ResponseEntity<ApiError> handleProductValidationException(Exception ex, WebRequest request) {
         ApiError error = ApiError.builder()
-                .status(HttpStatus.NOT_FOUND.value())
+                .status(HttpStatus.BAD_REQUEST.value())
                 .message(ex.getMessage())
                 .build();
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);

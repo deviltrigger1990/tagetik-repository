@@ -40,12 +40,11 @@ class CategoryAllDescendantsRetrieverImpl implements CategoryAllDescendantsRetri
             categories.add(currentNode.getCategory());
         }
 
-
-            for (TreeNode categoryChildNode : currentNode.getChildren()) {
-                visitTreeNode(categoryChildNode, category, categories);
-            }
+        for (TreeNode categoryChildNode : currentNode.getChildren()) {
+            visitTreeNode(categoryChildNode, category, categories);
         }
-
     }
+
+}
 
 

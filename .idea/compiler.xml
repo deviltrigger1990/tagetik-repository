@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="tagetik-core" target="17" />
+      <module name="TagetikAppsProject" target="17" />
+      <module name="TagetikFirstProject" target="17" />
+      <module name="TagetikSecondProject" target="17" />
+      <module name="TagetikThirdProject" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
